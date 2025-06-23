@@ -26,7 +26,7 @@ This project is designed to demonstrate SQL skills and techniques used to explor
 CREATE DATABASE sql_project_p1;
 
 CREATE TABLE retail_sales 
-			(
+		(
 				transactions_id	INT PRIMARY KEY,
 				sale_date DATE,
 				sale_time TIME,	
@@ -39,6 +39,7 @@ CREATE TABLE retail_sales
 				cogs FLOAT,	
 				total_sale  FLOAT
 			);
+			
 ```
 
 ### 2. Data Exploration & Cleaning
