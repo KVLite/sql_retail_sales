@@ -3,7 +3,6 @@
 ## Project Overview
 
 **Project Title**: Retail Sales Analysis  
-**Level**: Beginner  
 **Database**: `sql_project_p1`
 
 This project is designed to demonstrate SQL skills and techniques used to explore, clean, and analyze retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. This project shows a foundation in data analysis and a solid foundation in SQL.
@@ -39,7 +38,6 @@ CREATE TABLE retail_sales
 			cogs FLOAT,	
 			total_sale  FLOAT	
 		);
-			
 ```
 
 ### 2. Data Exploration & Cleaning
