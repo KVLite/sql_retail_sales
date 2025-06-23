@@ -1,5 +1,7 @@
 -- SQL Retail Sales Analysis - P1
 
+-- Create database in PostgrSQL
+
 -- Create the Table
 CREATE TABLE retail_sales 
 			(
@@ -16,55 +18,52 @@ CREATE TABLE retail_sales
 				total_sale  FLOAT
 			);
 
-select * from retail_sales
-limit 10;
+-- Data Exploration & Cleaning
 
-select 
-	count (*) 
-	from retail_sales;
+SELECT * from retail_sales;  -- 1997 rows
 
-select * from retail_sales;
+SELECT 
+	COUNT (*) 
+	FROM retail_sales;
+
+SELECT
+	COUNT(DISTINCT customer_id)		-- 155
+	FROM retail_sales;
+
+SELECT
+	DISTINCT category		-- 3, electronics, clothing, beauty
+	FROM retail_sales;
+
+SELECT * from retail_sales;
 
 -- Data Cleaning
 
-select * from retail_sales
-where transactions_id is null; 
+SELECT * FROM retail_sales
+WHERE 
+	transactions_id IS NULL
+	OR
+    sale_date IS NULL
+    OR
+	sale_time IS NULL
+	OR
+	customer_id IS NULL
+	OR
+	gender IS NULL
+	OR
+	age IS NULL
+	OR
+	category IS NULL
+	OR
+	quantity IS NULL
+	OR
+	price_per_unit IS NULL
+	OR
+	cogs IS NULL
+	OR 
+	total_sale IS NULL;
 
-select * from retail_sales
-where sale_date is null; 
-
-select * from retail_sales
-where sale_time is null; 
-
-select * from retail_sales
-where customer_id is null; 
-
-select * from retail_sales
-where 
-	transactions_id is null
-	or
-    sale_date is null
-    or
-	sale_time is null
-	or
-	customer_id is null
-	or
-	gender is null
-	or
-	age is null
-	or
-	category is null
-	or
-	quantity is null
-	or
-	price_per_unit is null
-	or
-	cogs is null
-	or 
-	total_sale is null;
-
-delete from retail_sales
-where 
+DELETE FROM retail_sales
+WHERE 
 	quantity is null
 	or
 	price_per_unit is null
@@ -72,24 +71,6 @@ where
 	cogs is null
 	or
 	total_sale is null;
-	
--- Data Exploration
-
--- How many sales do we have?
-
-SELECT COUNT(*) AS total_sale from retail_sales;  --  total records is 1997
-
--- How many unique customers do we have?
-
-SELECT COUNT(DISTINCT customer_id) from retail_sales;  -- 155
-
--- How many unique categories do we have?
-
-SELECT COUNT(DISTINCT category) from retail_sales; 3
-
--- How many category names do we have?
-
-SELECT DISTINCT category from retail_sales;  -- 3, electronics, clothing, beauty
 
 -- Data Analysis & Business Key Problems & Answers
 
@@ -112,8 +93,7 @@ SELECT *
 FROM  retail_sales 
 WHERE sale_date = '2022-11-05';  -- 11 records returned
 
--- Q.2 Write a SQL query to retrieve all transactions where the category is 'Clothing' and the 
--- quantity sold is more than 4 in the month of Nov-2022
+-- Q.2 Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022
 SELECT *
 FROM retail_sales
 WHERE 
@@ -123,13 +103,6 @@ WHERE
 	AND quantity >= 4;
 
 -- Q.3 Write a query, calculate the total sales (total_sale) for each category
-
-SELECT 
-	category,
-	sum(total_sale) as net_sale 
-FROM retail_sales
-group by 1;
-
 SELECT 
 	category,
 	sum(total_sale) as net_sale, 
@@ -155,13 +128,11 @@ where category = 'Beauty';
 
 
 -- Q.5 Write query, find all transactions where the total_sale is greater than 1000
-
 SELECT *
 	FROM retail_sales
 	WHERE total_sale > 1000;
 
 -- Q.6 Write query, find the total number of transactions made by each gender in each category
-
 SELECT 
 	category,
 	gender,
@@ -190,7 +161,7 @@ FROM retail_sales
 GROUP BY 1,2
 ) AS t1
 WHERE rank = 1;
---ORDER BY 1, 3 desc;
+
 
 -- Q.8 Write query, find the top 5 customers based on the highest total sales
 
@@ -235,8 +206,7 @@ GROUP BY shift;
 	
 -- End of project
 
--- Current time
---SELECT EXTRACT (HOUR FROM CURRENT_TIME);     -- Shows 13, or 1:57pm
+
 
 
 
