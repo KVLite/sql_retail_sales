@@ -9,16 +9,16 @@ This project is designed to explore, clean, and analyze retail sales data. The p
 
 ## Objectives
 
-1. **Set up a retail sales database**: Create and populate a retail sales database with the provided sales data.
-2. **Data Cleaning**: Identify and remove any records with missing or null values.
-3. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset.
-4. **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
+A. **Set up a retail sales database**: Create and populate a retail sales database with the provided sales data.
+B. **Data Cleaning**: Identify and remove any records with missing or null values.
+C. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset.
+D. **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
 
 ## Project Structure
 
-### 1. Database Setup
+### A. Database Setup
 
-- **Database Creation**: The project starts by creating a database named `sql_profect_p1`.
+- **Database Creation**: The project starts by creating a database named `sql_project_p1`.
 - **Table Creation**: Create a table named `retail_sales` to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 
 ```sql
@@ -40,7 +40,7 @@ CREATE TABLE retail_sales
 		);
 ```
 
-### 2. Data Exploration & Cleaning
+### B. Data Exploration & Cleaning
 
 - **Record Count**: Determine the total number of records in the dataset.
 - **Customer Count**: Find out how many unique customers are in the dataset.
@@ -65,7 +65,7 @@ WHERE
     quantity IS NULL OR price_per_unit IS NULL OR cogs IS NULL;
 ```
 
-### 3. Data Analysis & Findings
+### C. Data Analysis & Findings
 
 The following SQL queries were developed to answer specific business questions:
 
@@ -182,6 +182,8 @@ FROM hourly_sale
 GROUP BY shift;
 ```
 
+### D. Business Analysis
+
 ## Findings
 
 - **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
@@ -197,11 +199,12 @@ GROUP BY shift;
 
 ## Conclusion
 
-This project covered database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
+This project outlines a quick database setup and the use of data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
 
 ## Author - Kelle Vaughn
 
-This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
-- **LinkedIn**: [Conect with me professionally] www.linkedin.com/in/kellevaughn-pmp
+Please feel free to get in touch.
 
-Thank you, and I look forward to connecting with you!
+- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/kellevaughn-pmp)
+
+Thank you for your interest.
